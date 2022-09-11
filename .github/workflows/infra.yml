@@ -30,6 +30,7 @@ jobs:
 
       - name: Terraform initialize
         run: |
+          mv ./Infrastructure/* .
           rm -rf .terraform
           terraform init -input=false
 
