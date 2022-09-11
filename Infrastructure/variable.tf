@@ -9,10 +9,9 @@ variable "AMI" {
     "us-east-1"      = "ami-0c2a1acae6667e438"
   }
 }
-variable "PUBLIC_KEY_PATH" {
-  default = "../keys/sydney-region-key-pair.pub"
-
+variable "PUBLIC_KEY" {
+  default = "files/jenkins-aws.pem"
 }
-variable "PRIVATE_KEY_PATH" {
-  default = "../keys/sydney-region-key-pair"
+locals {
+  ssh_private_key_content = file(var.ssh_private_key_file)
 }

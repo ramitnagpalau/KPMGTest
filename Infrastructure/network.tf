@@ -70,5 +70,5 @@ resource "aws_instance" "web" {
 // Sends your public key to the instance
 resource "aws_key_pair" "sydney-region-key-pair" {
   key_name   = "sydney-region-key-pair"
-  public_key = file(var.PUBLIC_KEY_PATH)
+  public_key = var.PUBLIC_KEY
 }
