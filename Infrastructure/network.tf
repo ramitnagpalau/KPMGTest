@@ -64,11 +64,5 @@ resource "aws_instance" "web" {
   # Security Group
   vpc_security_group_ids = ["${aws_security_group.ssh-allowed.id}"]
   # the Public SSH key
-  key_name = aws_key_pair.sydney-region-key-pair.id
-}
-
-// Sends your public key to the instance
-resource "aws_key_pair" "sydney-region-key-pair" {
-  key_name   = "sydney-region-key-pair"
-  public_key = var.PUBLIC_KEY
+  key_name = "JenkinsInstance"
 }
